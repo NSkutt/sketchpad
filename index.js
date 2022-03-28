@@ -1,6 +1,7 @@
-let squares = 16;
-let boxes;
+
 function pad(){
+	let squares = parseInt(squareNumber.value);
+	if(squares > 35){return console.error("Warning: Cannot handle more than 35!")};
 	container.replaceChildren(); //When function runs again, empty container of old boxes
 	//container.style.backgroundColor = "red";
 	for (i=1; i<=squares*squares; i++){
@@ -13,8 +14,8 @@ function pad(){
 		//window[`square${i}`].style.backgroundColor = `#${Math.floor(Math.random()*10)}${Math.floor(Math.random()*10)}${Math.floor(Math.random()*10)}`;
 		container.append(window[`square${i}`]);
 	};
-	boxes = [...document.querySelectorAll('.boxes')];
-	return boxes;
+	let boxes = [...document.querySelectorAll('.boxes')];
+	boxes.forEach(box => {box.addEventListener('mouseenter', color)});
 }
 pad();
 
@@ -31,4 +32,4 @@ function color(){
 	}
 }
 
-boxes.forEach(box => {box.addEventListener('mouseenter', color)})
+btn.addEventListener('click', pad);

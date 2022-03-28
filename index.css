@@ -1,8 +1,8 @@
 body{
 	height: 90vh;
-	display:flex;
-	justify-content:center;
-	align-items: center;
+	background-color: #ddd;
+	display:grid;
+	grid-template-columns: 1fr 4fr;
 }
 
 #container{
@@ -13,9 +13,14 @@ body{
 	border: 2px solid black;
 	
 }
-
+#inputArea{
+	display:flex;
+	flex-flow: column;
+	justify-content:flex-start;
+	align-items:flex-start;
+	}
 .boxes{
-
+	background-color:#eee;
 }
 .boxes.hovered{
 	background-color: #aaa;
