@@ -19,9 +19,16 @@ function pad(){
 pad();
 
 function color(){
-	//console.log(this);
+	//console.log(this.style.backgroundColor);
 	//this.style.backgroundColor = '';
-	this.classList.add('hovered');
+	if(this.style.backgroundColor != ''){
+		this.style.backgroundColor = "#000";
+	}else if ([...this.classList].includes('hovered')){
+		//console.log(this.style);
+		this.style.backgroundColor = '#555';
+	}else{
+		this.classList.add('hovered');
+	}
 }
 
 boxes.forEach(box => {box.addEventListener('mouseenter', color)})
